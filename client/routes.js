@@ -39,5 +39,13 @@ export default (
         });
       }}
     />
-  </Route>
+    <Route
+      path="/gallery/uploadImages"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Gallery/Pages/UploadImagesPage').default);
+        });
+      }}
+    />
+</Route>
 );
